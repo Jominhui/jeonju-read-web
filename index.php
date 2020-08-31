@@ -1,3 +1,4 @@
+<?php include_once('lib/lib.php');?>
 <?php include_once('pages/header.php'); ?>
 <div class="visual-area carousel slide" data-interval="3000" data-ride="carousel" data-pause="false">
     <div class="carousel-inner">

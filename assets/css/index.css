@@ -46,7 +46,7 @@ header{
 
 .sub-menu-area{
     display: none;
-    width: 200px;
+    width: 250px;
     height: auto;
     background-color: #182160;
     position: absolute;
@@ -80,7 +80,7 @@ header{
     font-weight: bold;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 40px;
     color: #ffffff;
     transition: all 0.2s;
 }
@@ -687,4 +687,101 @@ footer{
 
 .drawing_board {
     border: 1px solid black;
+}
+
+/*페이지*/
+.page-area{
+    width: 1000px;
+    height: auto;
+    margin: 100px auto;
+    border-radius: 10px;
+    border: 2px solid #97a5af;
+    padding-bottom: 50px;
+}
+
+.page-title{
+    width: 80%;
+    height: 150px;
+    padding-top: 50px;
+    font-size: 60px;
+    margin: 0 auto;
+}
+
+.text-group{
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.text-group>label{
+    font-size: 20px;
+}
+
+.text-group>input{
+    width: 100%;
+    height: 50px;
+}
+
+.text-group>img{
+    width: 20%;
+    height: 50px;
+    float: left;
+}
+
+.page-btn{
+    display: block;
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #0b7b9c;
+    margin: 20px auto;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.page-not{
+    text-align: center;
+}
+
+.select-group{
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+.select-group>label{
+    font-size: 20px;
+    width: 100%;
+}
+
+.select-group>input{
+    width: 10%;
+    height: 30px;
+}
+
+#captcha{
+    width: 75%;
+    float: right;
+}
+
+.list-area{
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+}
+
+/*로그인 완료후*/
+#login-ok-title{
+    text-align: center;
+    margin-top: 200px;
+}
+
+#login-ok-content{
+    width: 15%;
+    height: auto;
+    margin: 20px auto 400px auto;
+    display: flex;
+    justify-content: space-around;
 }

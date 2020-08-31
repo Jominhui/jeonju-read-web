@@ -21,7 +21,12 @@
                         <div class="sub-menu-title">전주독서대전</div>
                         <hr class="sub-menu-line">
                         <a href="../index.php"><div class="sub-menu">대전 소개</div></a>
-                        <div class="sub-menu">로그인 및 회원가입</div>
+                        <?php if(!isset($_SESSION['userid'])) {
+                            echo "<a href='../pages/login.php'><div class='sub-menu'>로그인 및 회원가입</div></a>";
+                        }
+                        else{
+                            echo "<a href='../pages/logout.php'><div class='sub-menu'>로그아웃</div></a>";
+                        } ?>
                         <a href="../pages/overview.php"><div class="sub-menu">행사개요</div></a>
                     </div>
                 </div>
