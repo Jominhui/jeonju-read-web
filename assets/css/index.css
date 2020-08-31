@@ -646,3 +646,45 @@ footer{
 .icon:hover{
     color: black;
 }
+
+#poster_area{
+    width: 1400px;
+    height: 800px;
+    margin-top: 100px;
+}
+
+#poster{
+    width: 400px;
+    height: 600px;
+    background-image: url("../img/A_img/poster.jpg");
+    background-size: cover;
+    margin-right: 100px;
+    float: left;
+}
+
+#Ptitle{
+    width: 900px;
+    height: 50px;
+    float: left;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#Pcontents{
+    width: 900px;
+    height: auto;
+    float: left;
+    border: 2px solid cornflowerblue;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#draw_area{
+    width: 100%;
+    height: auto;
+}
+
+.drawing_board {
+    border: 1px solid black;
+}
