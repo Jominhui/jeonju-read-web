@@ -76,7 +76,7 @@
             <input type="hidden" id="captchaOk" value="no">
         </div>
         <button type="submit" class="page-btn" onclick="Check();">Register</button>
-        <p class="page-not"> Already a member? <a href="login.php">Sign in</a></p>
+        <p class="page-not"> Already a member? <a href="login.php">Login</a></p>
     </form>
 </div>
 <?php endif;?>
