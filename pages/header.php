@@ -47,7 +47,7 @@
                         <hr class="sub-menu-line">
                         <a href="<?=$link_list;?>"><div class="sub-menu">행사등록</div></a>
                         <a href="<?=$link_manager?>"><div class="sub-menu">예약관리</div></a>
-                        <div class="sub-menu">예약현황</div>
+                        <a href="<?=$link_current?>"><div class="sub-menu">예약현황</div></a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
-include_once('header.php');
 include_once('../lib/lib.php');
+include_once('header.php');
 $schText = isset($_GET['schText']) ? $_GET['schText'] : "";
 ?>
 <div class="list-area">

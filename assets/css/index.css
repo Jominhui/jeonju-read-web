@@ -921,3 +921,15 @@ td>a{
 #btn_area{
     margin-top: 20px;
 }
+
+/*예약 현황 그래프*/
+.center{
+    width: 50%;
+    height: auto;
+    float: left;
+    text-align: center;
+}
+
+.center>canvas{
+    margin-left: 110px;
+}
