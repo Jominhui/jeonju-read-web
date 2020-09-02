@@ -91,4 +91,14 @@
         $link_reservate = "javascript:alert('회원만 접근할 수 있습니다.');";
         $link_mylist ="javascript:alert('회원만 접근할 수 있습니다.');" ;
     }
+
+    if ($loginid == "admin"){
+        $link_list = "../pages/festival-list.php";
+        $link_manager = "../pages/reservate_manager.php";
+        $link_current = "../pages/reservate_current.php";
+    } else {
+        $link_list = "javascript:alert('권한이 없습니다.');";
+        $link_manager = "javascript:alert('권한이 없습니다.');";
+        $link_current = "javascript:alert('권한이 없습니다.');";
+    }
 ?>
