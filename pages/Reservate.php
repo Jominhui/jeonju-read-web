@@ -1,7 +1,5 @@
-<?php
-include_once('../lib/lib.php');
-include_once ('../lib/calendar.php');
-?>
+<?php include_once('../lib/lib.php');?>
+<?php include_once ('../lib/calendar.php');?>
 <?php include_once('header.php');?>
 <div class="page-area">
     <h1 class="page-title">Reservate</h1>
