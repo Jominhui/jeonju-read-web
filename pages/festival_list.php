@@ -35,7 +35,7 @@
         ?>
         </tbody>
     </table>
-    <a href="Add-festival.php">
+    <a href="Add_festival.php">
         <div class="registe"> + </div>
     </a>
 </div>

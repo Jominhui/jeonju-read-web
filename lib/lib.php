@@ -93,8 +93,8 @@
     }
 
     if ($loginid == "admin"){
-        $link_list = "../pages/festival-list.php";
-        $link_manager = "../pages/reservate_manager.php";
+        $link_list = "../pages/festival_list.php";
+        $link_manager = "../pages/festival_manager.php";
         $link_current = "../pages/reservate_current.php";
     } else {
         $link_list = "javascript:alert('권한이 없습니다.');";
