@@ -13,8 +13,8 @@
         </div>
     </div>
 
-    <div class="read-area">
-        <div class="read">
+    <div class="main-read-area">
+        <div class="main-read">
             <h3>2020 전주독서대전</h3>
             <h1>책 읽는 도시<br>글 쓰는 전주</h1>
             <h3>2020. 9. 18 (금) ~ 9. 20 (일)</h3>

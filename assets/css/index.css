@@ -116,7 +116,7 @@ header{
     height: 100%;
 }
 
-.read-area{
+.main-read-area{
     width: 400px;
     height: 400px;
     background-image: url("../img/read-back.png");
@@ -129,13 +129,13 @@ header{
     text-align: center;
 }
 
-.read>h1{
+.main-read>h1{
     margin: 80px 0;
     font-weight: 900;
     color: #f3c852;
 }
 
-.read>h3{
+.main-read>h3{
     margin: 40px 0;
     font-weight: 600;
     color: #ffffff;
