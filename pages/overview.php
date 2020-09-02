@@ -1,3 +1,4 @@
+<?php include_once('../lib/lib.php'); ?>
 <?php include_once('header.php');?>
         <div id="poster_area">
             <div id="poster"></div>

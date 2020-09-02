@@ -13,7 +13,7 @@
 <body>
     <div id="wrap">
         <header>
-            <div class="logo"></div>
+            <a href="../index.php"><div class="logo"></div></a>
             <div class="main-menu-area">
                 <div class="main-menu">
                     전주독서대전
@@ -37,7 +37,7 @@
                         <div class="sub-menu-title">독자와의 만남</div>
                         <hr class="sub-menu-line">
                         <a href="<?=$link_reservate;?>"><div class="sub-menu">예약하기</div></a>
-                        <div class="sub-menu">예약확인</div>
+                        <a href="<?=$link_mylist;?>"><div class="sub-menu">예약확인</div></a>
                     </div>
                 </div>
                 <div class="main-menu">
