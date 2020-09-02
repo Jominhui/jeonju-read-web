@@ -30,7 +30,7 @@
                         <a href="../pages/overview.php"><div class="sub-menu">행사개요</div></a>
                     </div>
                 </div>
-                <div class="main-menu">온라인 책만들기</div>
+                <div class="main-menu"><a href="../pages/EditBook.php" id="edit">온라인 책만들기</a></div>
                 <div class="main-menu">
                     독자와의 만남
                     <div class="sub-menu-area">
