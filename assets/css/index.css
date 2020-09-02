@@ -785,3 +785,17 @@ footer{
     display: flex;
     justify-content: space-around;
 }
+
+
+/*달력*/
+#selectBox{
+    width: 80%;
+    height: auto;
+    margin-left: 6rem;
+    margin-bottom: 2rem;
+}
+
+#calender{
+    width: 100%;
+    height: 600px;
+}

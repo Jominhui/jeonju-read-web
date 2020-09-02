@@ -36,7 +36,7 @@
                     <div class="sub-menu-area">
                         <div class="sub-menu-title">독자와의 만남</div>
                         <hr class="sub-menu-line">
-                        <div class="sub-menu">예약하기</div>
+                        <a href="<?=$link_reservate;?>"><div class="sub-menu">예약하기</div></a>
                         <div class="sub-menu">예약확인</div>
                     </div>
                 </div>
