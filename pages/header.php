@@ -46,7 +46,7 @@
                         <div class="sub-menu-title">관리자페이지</div>
                         <hr class="sub-menu-line">
                         <a href="<?=$link_list;?>"><div class="sub-menu">행사등록</div></a>
-                        <div class="sub-menu">예약관리</div>
+                        <a href="<?=$link_manager?>"><div class="sub-menu">예약관리</div></a>
                         <div class="sub-menu">예약현황</div>
                     </div>
                 </div>
