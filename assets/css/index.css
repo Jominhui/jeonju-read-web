@@ -879,3 +879,45 @@ td>a{
     height: auto;
     margin: 0 auto;
 }
+
+/*보기*/
+.read-area{
+    width: 80%;
+    height: 400px;
+    margin: 50px auto;
+}
+
+.read-image-area{
+    width: 45%;
+    height: 400px;
+    float: left;
+}
+
+.about-read-area{
+    width: 50%;
+    height: 400px;
+    float: right;
+}
+
+.title-read{
+    width: 100%;
+    height: 100px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.about-read{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+}
+
+.about-res{
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+}
+
+#btn_area{
+    margin-top: 20px;
+}
