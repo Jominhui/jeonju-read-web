@@ -1,3 +1,4 @@
+<?php include_once('../lib/lib.php')?>
 <?php include_once('header.php')?>
 <section style="margin-top: 50px; margin-bottom: 20px;">
         <div>
