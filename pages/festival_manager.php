@@ -53,18 +53,4 @@ $schText = isset($_GET['schText']) ? $_GET['schText'] : "";
     </table>
 </div>    
 
-    <script>
-        function changeReady(idx, ready) {
-            $.post("../lib/action.php", {idx:idx, ready:ready, action: "changereadystate"}, function(result){
-                console.log(result);
-                let res = $.parseJSON(result);
-                if( res.success ) {
-                    $("#schFrm").submit();
-                } else {
-                    alert("변경실패");
-                }
-            } );
-        }
-    </script>
-
 <?php include_once ('footer.php'); ?>

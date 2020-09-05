@@ -4,31 +4,6 @@
         include_once('../lib/server.php');
     }
 ?>
-<script>
-    const Email = /[a-z0-9._%]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    const Name = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-    const Password = /[a-zA-Z0-9]{4,}/;
-
-    function refresh_captcha() {
-        document.getElementById("capt_img").src = "captcha.php?waste=" + Math.random();
-    }
-
-    const Check = () => {
-        let email = $('#input-email').val();
-        let name = $('#input-name').val();
-        let password = $('#input-password').val();
-
-        if(!Email.test(email) === true){
-            alert('이메일 형식을 맞춰주세요.');
-        }
-        else if(!Name.test(name) === true) {
-            alert('한국어 이름을 입력해 주세요.');
-        }
-        else if(!Password.test(password) === true) {
-            alert('비밀번호는 영문 및 숫자이며 4글자 이상이어야 합니다.');
-        }
-    }
-</script>
 <?php include_once('header.php');?>
 
 <?php if( $login ):?>
@@ -76,35 +51,9 @@
             <input type="hidden" id="captchaOk" value="no">
         </div>
         <button type="submit" class="page-btn" onclick="Check();">Register</button>
-        <p class="page-not"> Already a member? <a href="login.php">Login</a></p>
+        <p class="page-not"><a href="login.php">Already a member? Login</a></p>
     </form>
 </div>
 <?php endif;?>
 
-
-<script>
-    const checkForm = () => {
-        let captcha = $("#captcha").val();
-        if( ! captcha ) {
-            alert("캡차는 필수항목입니다.");
-            return false;
-        }
-        if( $("#captchaOk").val() !== "yes" ) {
-            alert("캡차가 일치하지 않습니다.");
-            return false;
-        }
-    }
-
-    let checkCaptcha = () => {
-        let captcha = $("#captcha").val();
-        let send_data = {};
-        send_data.action = "checkcaptcha";
-        send_data.captcha = captcha;
-        $.post("../lib/action.php", send_data, function(result){
-            let res = $.parseJSON(result);
-            if( res.success ) $("#captchaOk").val("yes");
-            else $("#captchaOk").val("no");
-        });
-    }
-</script>
 <?php include_once('footer.php');?>

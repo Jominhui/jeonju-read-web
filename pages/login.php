@@ -17,7 +17,7 @@
         </div>
 
         <button type="submit" class="page-btn">Login</button>
-        <p class="page-not">Not yet a member? <a href="register.php">Sign up</a></p>
+        <p class="page-not"><a href="register.php">Not yet a member? Sign up</a></p>
     </form>
 </div>
 <?php endif;?>

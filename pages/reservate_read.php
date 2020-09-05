@@ -35,13 +35,4 @@
     </p>
     </div>
 </div>
-    <script>
-        function delEvent(idx) {
-            if( ! idx ) return;
-            if( ! confirm("예약을 취소하시겠습니까?") ) return;
-            let frm = document.getElementById('delForm');
-            document.getElementById('idx').value= idx;
-            frm.submit();
-        }
-    </script>
 <?php include_once('footer.php'); ?>
