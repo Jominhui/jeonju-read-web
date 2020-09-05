@@ -1,10 +1,10 @@
 <?php include_once('../lib/lib.php')?>
 <?php include_once('header.php')?>
-<section style="margin-top: 50px; margin-bottom: 20px;">
-        <div>
-            <span class="page_num">page 1 / 3</span>
-            <button id="newpage">new page</button>
-        </div>
+<section class="draw-btn-area">
+    <div>
+        <span class="page_num">page 1 / 3</span>
+        <button id="newpage">new page</button>
+    </div>
     <hr>
     <button id="stroke" class="btn-select">선</button>
     <button id="square" class="btn-select">사각형</button>
@@ -15,7 +15,7 @@
     <input type="file" id="image_select">
     <label for="video_select"></label>
     <input type="file" id="video_select">
-    <br>
+    <br><br>
     <label for="color">색상 : </label>
     <input type="color" value="#ff0000" id="color">
     <label for="line_width">선두께 : </label>
@@ -30,8 +30,8 @@
 </div>
 
 <div id="save">
-    <div><a href="" id="save_html">html로 저장</a></div>
-    <div><a href="" id="save_pdf">pdf로 저장</a></div>
+    <a href="" id="save_html"><div>html로 저장</div></a>
+    <a href="" id="save_pdf"><div>pdf로 저장</div></a>
 </div>
 
 <script src="../assets/js/index.js"></script>
