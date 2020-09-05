@@ -157,7 +157,7 @@ header{
     bottom: 40px;
 }
 
-.carousel_btn{
+.carousel-btn{
     width: 30%;
     height: 70%;
     display: flex;
@@ -169,11 +169,11 @@ header{
     transition: all 0.3s;
 }
 
-.carousel_btn:active{
+.carousel-btn:active{
     color: rgb(70, 70, 70);
 }
 
-.select_img_area{
+.select-img-area{
     width: 40%;
     height: 150px;
     position: absolute;

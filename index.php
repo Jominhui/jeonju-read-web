@@ -15,39 +15,31 @@
     </div>
 
     <div class="main-read-area">
-        <div class="main-read">
-            <h3>2020 전주독서대전</h3>
-            <h1>책 읽는 도시<br>글 쓰는 전주</h1>
-            <h3>2020. 9. 18 (금) ~ 9. 20 (일)</h3>
-        </div>
+        <h3>2020 전주독서대전</h3>
+        <h1>책 읽는 도시<br>글 쓰는 전주</h1>
+        <h3>2020. 9. 18 (금) ~ 9. 20 (일)</h3>
     </div>
 
-    <div class="carousel_btn_area">
-        <div class="carousel_btn" href=".visual-area" data-slide="prev" id="prev_btn">
+    <div class="carousel-btn-area">
+        <div class="carousel-btn" href=".visual-area" data-slide="prev" id="prev_btn">
             <span class="fa fa-arrow-left"></span>
         </div>
-        <div class="carousel_btn" href=".visual-area" data-slide="next" id="next_btn">
+        <div class="carousel-btn" href=".visual-area" data-slide="next" id="next_btn">
             <span class="fa fa-arrow-right"></span>
         </div>
     </div>
 
-    <div class="select_img_area">
-        <div data-target=".visual-area" data-slide-to="0" class="ac_img">
-            <img src="assets/img/A_img/book-3480216_1920.jpg" alt="">
-        </div>
-        <div data-target=".visual-area" data-slide-to="1" class="ac_img">
-            <img src="assets/img/A_img/young-1822682_1920.jpg" alt="">
-        </div>
-        <div data-target=".visual-area" data-slide-to="2" class="ac_img">
-            <img src="assets/img/A_img/book-2432139_1920.jpg" alt="">
-        </div>
+    <div class="select-img-area">
+        <img src="assets/img/A_img/book-3480216_1920.jpg" data-target=".visual-area" data-slide-to="0" class="ac_img">
+        <img src="assets/img/A_img/young-1822682_1920.jpg" data-target=".visual-area" data-slide-to="0" class="ac_img">
+        <img src="assets/img/A_img/book-2432139_1920.jpg" data-target=".visual-area" data-slide-to="0" class="ac_img">
     </div>
 </div>
 
 <!-- 소개 영역 -->
-<div id="info-area">
-    <h1 id="info-back-title">2020 JEONJU<br>READ FESTIVAL</h1>
-    <div id="info-circle-area">
+<div class="info-area">
+    <h1 class="info-back-title">2020 JEONJU<br>READ FESTIVAL</h1>
+    <div    class="info-circle-area">
         <div class="info-circle" id="circle1">多</div>
         <div class="info-circle" id="circle2">讀</div>
         <div class="info-circle" id="circle3">多</div>
