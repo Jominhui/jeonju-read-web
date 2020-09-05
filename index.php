@@ -1,5 +1,6 @@
 <?php include_once('lib/lib.php');?>
 <?php include_once('pages/header.php'); ?>
+<!-- 비주얼 영역 -->
 <div class="visual-area carousel slide" data-interval="3000" data-ride="carousel" data-pause="false">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -43,6 +44,7 @@
     </div>
 </div>
 
+<!-- 소개 영역 -->
 <div id="info-area">
     <h1 id="info-back-title">2020 JEONJU<br>READ FESTIVAL</h1>
     <div id="info-circle-area">
@@ -63,6 +65,7 @@
     </div>
 </div>
 
+<!-- 이벤트 영역 -->
 <div id="event-list">
     <p id="event-title">EVENT <span>LIST</span></p>
     <div class="event-content" style="border-radius: 10px 30px 60px 60px; float: left;">
@@ -88,6 +91,7 @@
     </div>
 </div>
 
+<!-- 작가 영역 -->
 <div id="writer-area">
     <p id="writer-title">초청작가</p>
     <a href="#popup1"><div class="writer-content writer1"></div></a>
@@ -134,6 +138,7 @@
     </div>
 </a>
 
+<!-- 행사 영역 -->
 <div id="festival">
     <input type="radio" class="festival-btn" id="btn1" name="btn" checked>
     <input type="radio" class="festival-btn" id="btn2" name="btn">
