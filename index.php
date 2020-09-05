@@ -1,5 +1,5 @@
 <?php include_once('lib/lib.php');?>
-<?php include_once('pages/header.php'); ?>
+<?php include_once('pages/_header.php'); ?>
 <!-- 비주얼 영역 -->
 <div class="visual-area carousel slide" data-interval="3000" data-ride="carousel" data-pause="false">
     <div class="carousel-inner">
