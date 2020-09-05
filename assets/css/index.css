@@ -316,7 +316,16 @@ header{
     font-weight: 600;
     padding-left: 50px;
     color: white;
+    border-radius: 10px 30px 60px 60px; 
+    float: left;
     transition: all 0.2s;
+}
+
+.e-right{
+    border-radius: 30px 10px 60px 60px;
+    float: right; 
+    text-align: right; 
+    padding-right: 50px;
 }
 
 .event-content-title{
@@ -335,13 +344,16 @@ header{
     font-size: 60px;
     line-height: 50px;
     position: relative;
-    transition: all 0.2s;
-}
-
-.event-left{
     top: -70px;
     left: 780px;
     padding-left: 22px;
+    transition: all 0.2s;
+}
+
+.e-c-right{
+    padding-right: 40px; 
+    top: -100px; 
+    left: -80px;
 }
 
 .event-content:hover{
@@ -682,12 +694,18 @@ footer{
 }
 
 /* 그림판 */
+.draw-btn-area{
+    width: 100%;
+    height: auto;
+}
+
 #draw_area{
     width: 100%;
     height: auto;
 }
 
 .drawing_board {
+    margin: 0 auto;
     border: 1px solid black;
 }
 

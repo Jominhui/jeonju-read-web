@@ -60,26 +60,26 @@
 <!-- 이벤트 영역 -->
 <div id="event-list">
     <p id="event-title">EVENT <span>LIST</span></p>
-    <div class="event-content" style="border-radius: 10px 30px 60px 60px; float: left;">
+    <div class="event-content">
         <p class="event-content-title">개막행사</p>
         <p>책으로 떠나는 백이십 년의 시간여행 조선 말 책을 읽어주던 전기수와 전주 부윤일행, 2020년 전주한벽루 나타나다.<br>
         현대판 전기수인 북튜버와 조선 전기수의 입심 대결. 판소리와 랩, 흥겨운 연주가 함께 합니다.</p>
-        <div class="event-circle event-left"><i class="fa fa-angle-right"></i></div>
+        <div class="event-circle"><i class="fa fa-angle-right"></i></div>
     </div>
 
-    <div class="event-content" style="border-radius: 30px 10px 60px 60px; float: right; text-align: right; padding-right: 50px;">
+    <div class="event-content e-right">
         <p class="event-content-title">책에게 말 걸기</p>
         <p>문학을 대표하는 중견 소설가. 전북 고창 출생. 소설집 '타인에게 말 걸기', '행복한 사람은 시계를 보지 않는다'<br>
         '다른 모든 눈송이와 아주 비슷하게 생긴 단 하나의 눈송이' 장편소설 '새의 선문', <br>
         '마지막 춤은 나와 함께', '그것은 꿈이었을까', '마이너리그', '비밀과 거짓말', '소년을 위로해줘', '태연한 인생'</p>
-        <div class="event-circle" style="padding-right: 22px; top: -100px; left: -80px;"><i class="fa fa-angle-left"></i></div>
+        <div class="event-circle e-c-right"><i class="fa fa-angle-left"></i></div>
     </div>
 
-    <div class="event-content" style="border-radius: 30px 10px 60px 60px; float: left;">
+    <div class="event-content">
         <p class="event-content-title">그 책_작가를 만나다</p>
         <p>어떻게 슬픔은 빛이 되는가 '정혜윤의 읽기와 쓰기'<br>
         독서에세이 '침대와 책'을 시작으로 '삶을 바꾸는 책 읽기', '마술라디오' 등 책과 사람에 관한 이야기를 썼다.</p>
-        <div class="event-circle event-left"><i class="fa fa-angle-right"></i></div>
+        <div class="event-circle"><i class="fa fa-angle-right"></i></div>
     </div>
 </div>
 

@@ -1,9 +1,3 @@
-// class test {
-//     constructor() {
-//         color : ''
-//     }
-// }
-
 let pagenum = 1;
 let pageIdx = 0;
 let color = 'red';
@@ -62,7 +56,7 @@ const initEvent = () => {
             pagenum++;
             pageIdx++;
             $(".page_num").html(`page ${pagenum} / 3`);
-            $("#draw_area").append(`<canvas width="1440" height="750" class="drawing_board" data-idx=${pageIdx}></canvas>`);
+            $("#draw_area").append(`<canvas width="1400" height="750" class="drawing_board" data-idx=${pageIdx}></canvas>`);
         })
         .on('click keyup', '#line_width', function() {
             line_width = $('#line_width').val();
@@ -374,8 +368,4 @@ const save_pdf = (link) => {
     let src = canvas[select_canvas].toDataURL("image/png");
     link.download = "canvas.pdf";
     link.href = src;
-}
-
-const login = () =>{
-
 }
