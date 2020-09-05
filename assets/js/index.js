@@ -14,6 +14,14 @@ let txtX;
 let txtY;
 let istxt = false;
 let isvideo = false;
+let sx = 0;
+let sy = 0;
+let ex = 0;
+let ey = 0;
+
+const Email = /[a-z0-9._%]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+const Name = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+const Password = /[a-zA-Z0-9]{4,}/;
 
 const init = () => {
     canvas = $('.drawing_board');
@@ -85,19 +93,15 @@ const initEvent = () => {
             video_select(this);
         })
         .on('click', '#save_html', function () {
-            console.log("save");
             save_html(this);
         })
         .on('click', '#save_pdf', function () {
-            console.log("save");
             save_pdf(this);
         })
 }
 
+// 그림판
 const stroke = () =>{
-    canvas = $('.drawing_board');
-    ctx = canvas[select_canvas].getContext('2d');
-
     const down = (e) =>{
         if ( currJob != "stroke" ) return;
         isDrawing = true;
@@ -126,11 +130,6 @@ const stroke = () =>{
 }
 
 const square = () =>{
-    let sx = 0;
-    let sy = 0;
-    let ex = 0;
-    let ey = 0;
-
     const down = (e) =>{
         if ( currJob != "square" ) return;
         isDrawing = true;
@@ -164,11 +163,6 @@ const square = () =>{
 }
 
 const Triangle = () => {
-    let sx = 0;
-    let sy = 0;
-    let ex = 0;
-    let ey = 0;
-
     const down = (e) =>{
         if ( currJob != "Triangle" ) return;
         isDrawing = true;
@@ -263,11 +257,6 @@ const image_select = (photo) =>{
 }
 
 const image_draw = (src) =>{
-    let sx = 0;
-    let sy = 0;
-    let ex = 0;
-    let ey = 0;
-
     const down = (e) =>{
         if ( currJob != "image" ) return;
         isDrawing = true;
@@ -305,16 +294,10 @@ const image_draw = (src) =>{
 }
 
 const video_select = (select) =>{
-    let sx = 0;
-    let sy = 0;
-    let ex = 0;
-    let ey = 0;
-
     if( ! select.files ) return;
     if( ! select.files[0] ) return;
     let reader = new FileReader();
     reader.onload = function(event){
-        console.log("로드");
         let src = event.target.result;
         video.src = src;
     };
@@ -368,4 +351,116 @@ const save_pdf = (link) => {
     let src = canvas[select_canvas].toDataURL("image/png");
     link.download = "canvas.pdf";
     link.href = src;
+}
+
+// 회원가입
+const refresh_captcha = () => {
+    document.getElementById("capt_img").src = "captcha.php?waste=" + Math.random();
+}
+
+const Check = () => {
+    let email = $('#input-email').val();
+    let name = $('#input-name').val();
+    let password = $('#input-password').val();
+
+    if(!Email.test(email) === true){
+        alert('이메일 형식을 맞춰주세요.');
+    }
+    else if(!Name.test(name) === true) {
+        alert('한국어 이름을 입력해 주세요.');
+    }
+    else if(!Password.test(password) === true) {
+        alert('비밀번호는 영문 및 숫자이며 4글자 이상이어야 합니다.');
+    }
+}
+
+const checkForm = () => {
+    let captcha = $("#captcha").val();
+    if( ! captcha ) {
+        alert("캡차는 필수항목입니다.");
+        return false;
+    }
+    if( $("#captchaOk").val() !== "yes" ) {
+        alert("캡차가 일치하지 않습니다.");
+        return false;
+    }
+}
+
+const checkCaptcha = () => {
+    let captcha = $("#captcha").val();
+    let send_data = {};
+    send_data.action = "checkcaptcha";
+    send_data.captcha = captcha;
+    $.post("../lib/action.php", send_data, function(result){
+        let res = $.parseJSON(result);
+        if( res.success ) $("#captchaOk").val("yes");
+        else $("#captchaOk").val("no");
+    });
+}
+
+// 예약여부
+const changeReady = (idx, ready) => {
+    $.post("../lib/action.php", {idx:idx, ready:ready, action: "changereadystate"}, function(result){
+        let res = $.parseJSON(result);
+        if( res.success ) {
+            $("#schFrm").submit();
+        } else {
+            alert("변경실패");
+        }
+    } );
+}
+
+// 예약 가능 목록
+const changeYmd = () => {
+    let y=$("#year").val();
+    let m=$("#month").val();
+    location.href = "Reservate.php?year=" + y + "&month=" + m;
+}
+$(function(){
+    $(".select-date").on("click", function(e){
+        e.preventDefault();
+        let send_data = {};
+        send_data.mdate = $(this).attr("href");
+        send_data.action = "getmeets";
+
+        $.post("../lib/action.php", send_data, function(result){
+            let res = $.parseJSON(result);
+            let table = "<table class='table'>";
+            table += "<tr><td>제목</td><td>작가</td><td>날짜</td><td>시간</td><td>선택</td></tr>";
+            for(let i=0; i<res.length; i++) {
+                table += tr = `
+                    <tr>
+                        <td>${res[i].Title}</td>
+                        <td>${res[i].Writer}</td>
+                        <td>${res[i].MDate}</td>
+                        <td>${res[i].MTime}</td>
+                        <td><a href="#!" onclick="selectDate('${res[i].MDate}','${res[i].Writer}','${res[i].MTime}', '${res[i].Title}', '${res[i].Photo}')">선택</a></td>
+                    </tr>
+                `;
+            }
+            table += "</table>";
+            $("#selectlist").html(table);
+        });
+    });
+});
+
+const selectDate = (MDate, Writer, MTime, Title, Photo) => {
+    $("#date").val(MDate);
+    $("#time").val(MTime);
+    $("#writer").val(Writer);
+    $("#title").val(Title);
+    $("#photo").val(Photo);
+}
+
+$(".readonly").on('keydown paste', function(e){
+    e.preventDefault();
+});
+
+// 예약 취소
+const delEvent = (idx) => {
+    if( ! idx ) return;
+    if( ! confirm("예약을 취소하시겠습니까?") ) return;
+    let frm = document.getElementById('delForm');
+    document.getElementById('idx').value= idx;
+    frm.submit();
 }

@@ -34,5 +34,4 @@
     <a href="" id="save_pdf"><div>pdf로 저장</div></a>
 </div>
 
-<script src="../assets/js/index.js"></script>
 <?php include_once('footer.php') ?>
