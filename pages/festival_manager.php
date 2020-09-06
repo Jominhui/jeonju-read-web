@@ -4,11 +4,11 @@ include_once('header.php');
 $schText = isset($_GET['schText']) ? $_GET['schText'] : "";
 ?>
 <div class="list-area">
-    <form id="schFrm" action="reservate_manager.php" method="get" class="form-inline">
+    <form id="schFrm" action="festival_manager.php" method="get" class="form-inline">
         <div class="search-group">
             <input type="text" name="schText" required class="form-control" id="reservate-input" value="<?=$schText?>">&nbsp;
             <button type="submit" class="btn btn-primary">검색</button>&nbsp;
-            <a href="reservate_manager.php" class="btn btn-secondary">검색취소</a>
+            <a href="festival_manager.php" class="btn btn-secondary">검색취소</a>
         </div>
     </form>
     <table class="reservation-list">
@@ -20,6 +20,7 @@ $schText = isset($_GET['schText']) ? $_GET['schText'] : "";
             <td>나이</td>
             <td>학교</td>
             <td>날짜</td>
+            <td>시간</td>
             <td>요구사항</td>
             <td>예약여부</td>
         </tr>
@@ -39,6 +40,7 @@ $schText = isset($_GET['schText']) ? $_GET['schText'] : "";
             <td><?php echo $row->age?></td>
             <td><?php echo $row->school?></td>
             <td><?php echo $row->date?></td>
+            <td><?php echo $row->startTime?> ~ <?php echo $row->endTime?></td>
             <td class="text-about"><?php echo $row->about?></td>
             <td><?php if( $row->ready == "대기중" ):?>
                 <input type="button" value="<?php echo $row->ready?>" onclick="changeReady(<?=$row->idx?>,'예약중')">

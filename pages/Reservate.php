@@ -1,5 +1,5 @@
 <?php include_once('../lib/lib.php');?>
-<?php include_once ('../lib/calendar.php');?>
+<?php include_once('../lib/calendar.php');?>
 <?php include_once('header.php');?>
 <div class="page-area">
     <h1 class="page-title">Reservate</h1>
@@ -62,23 +62,30 @@
 
             </div>
         </div>
-
         <div class="text-group">
-            <label>Date</label>
-            <input type="text" name="date" id="date" class="form-control readonly" required>
-        </div>
-        <div class="text-group">
-            <label>time</label>
-            <input type="text" name="time" id="time" class="form-control readonly" required>
-        </div>
-        <div class="text-group">
-            <label>title</label>
+            <label>Title</label>
             <input type="text" name="title" id="title" class="form-control readonly" required>
         </div>
         <input type="hidden" name="photo" id="photo" class="form-control readonly" required>
         <div class="text-group">
             <label>writer</label>
-            <input type="text" name="writer" id="writer" class="form-control" required>
+            <input type="text" name="writer" id="writer" class="form-control readonly" required>
+        </div>
+        <div class="text-group">
+            <label>Date</label>
+            <input type="text" name="date" id="date" class="form-control readonly" required>
+        </div>
+        <div class="text-group">
+            <label>Day</label>
+            <input type="text" name="days" id="days" class="form-control readonly" required>
+        </div>
+        <div class="text-group">
+            <label>start time</label>
+            <input type="text" name="startTime" id="startTime" class="form-control readonly" required>
+        </div>
+        <div class="text-group">
+            <label>end time</label>
+            <input type="text" name="endTime" id="endTime" class="form-control readonly" required>
         </div>
         <div class="text-group">
             <label>username</label>

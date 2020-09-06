@@ -27,11 +27,19 @@
         </div>
         <div class="text-group">
             <label>Meeting(DATE)</label>
-            <input type="date" name="MDate">
+            <input type="date" name="meetDate">
         </div>
         <div class="text-group">
-            <label>Meeting(TIME)</label>
-            <input type="time" name="MTime">
+            <label>Meeting(DAY)</label>
+            <input type="text" name="days">
+        </div>
+        <div class="text-group">
+            <label>Meeting(START TIME)</label>
+            <input type="time" name="startTime">
+        </div>
+        <div class="text-group">
+            <label>Meeting(END TIME)</label>
+            <input type="time" name="endTime">
         </div>
         <button type="submit" class="page-btn">Complete</button>
     </form>

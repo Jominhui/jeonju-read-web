@@ -35,12 +35,14 @@ switch ($action){
         Writer = ? ,
         Target = ? ,
         ReleaseDate = ?,        
-        MDate = ? ,
-        MTime = ? ;
+        meetDate = ? ,
+        days = ?,
+        startTime = ? ,
+        endTime = ? ;
         ";
         $Photo = "";
         if( isset($_FILES['Photo']) ) {
-            $up_folder = "../uploads/";
+            $up_folder = "../upload/";
             $photo_file = $_FILES['Photo']['name'];
             $tmp_file = $_FILES['Photo']['tmp_name'];
             $target = $up_folder . $photo_file;
@@ -48,8 +50,8 @@ switch ($action){
                 $Photo = $photo_file;
             }
         }
-        $execArr = [$Title, $Photo, $Writer, $Target, $ReleaseDate, $MDate, $MTime];
-        $url = "../pages/adminlist.php";
+        $execArr = [$Title, $Photo, $Writer, $Target, $ReleaseDate, $meetDate, $days, $startTime, $endTime];
+        $url = "../pages/festival_list.php";
         break;
 
     case 'update' :
@@ -75,7 +77,7 @@ switch ($action){
         WHERE idx = ?                                                                                                                                                                                                                          
         ";
 
-        $url = "../pages/adminlist.php";
+        $url = "../pages/festival_list.php";
         if($Photo) $execArr = [$Title, $Photo, $Writer, $Target, $ReleaseDate, $MDate, $MTime, $idx];
         else $execArr = [$Title, $Writer, $Target, $ReleaseDate, $MDate, $MTime, $idx];
         break;
@@ -83,7 +85,7 @@ switch ($action){
     case 'delete' :
         $sql = "DELETE FROM meet WHERE idx = ?";
         $execArr = [$idx];
-        $url = "../pages/adminlist.php";
+        $url = "../pages/festival_list.php";
         break;
 
     case 'reservate' :
@@ -97,10 +99,13 @@ switch ($action){
         age = ? ,
         school = ? ,
         date = ? ,
+        days = ? ,
+        startTime = ? ,
+        endTime = ? , 
         about = ? , 
         ready = ?;
         ";
-        $execArr = [$title, $photo, $writer, $username, $gender, $age, $school, $date, $about, $ready];
+        $execArr = [$title, $photo, $writer, $username, $gender, $age, $school, $date, $days, $startTime, $endTime, $about, $ready];
         $url = "../index.php";
         break;
         

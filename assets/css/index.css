@@ -744,8 +744,7 @@ footer{
 
 .text-group>img{
     width: 20%;
-    height: 50px;
-    float: left;
+    height: 100px;
 }
 
 .page-btn{
@@ -901,21 +900,27 @@ td>a{
 }
 
 /*보기*/
+.read-page-area{
+    width: 100%;
+    height: auto;
+    min-height: 800px;
+}
+
 .read-area{
     width: 80%;
-    height: 400px;
+    height: auto;
     margin: 50px auto;
 }
 
 .read-image-area{
     width: 45%;
-    height: 400px;
+    height: auto;
     float: left;
 }
 
 .about-read-area{
     width: 50%;
-    height: 400px;
+    height: auto;
     float: right;
 }
 
