@@ -9,6 +9,7 @@
             <td>작가</td>
             <td>타겟</td>
             <td>날짜</td>
+            <td>요일</td>
             <td>시간</td>
             <td>수정</td>
         </tr>
@@ -21,13 +22,14 @@
             ?>
             <tr>
                 <td> <?php if($row->Photo):?>
-                    <img class="book-img-list" src="../uploads/<?=$row->Photo?>" alt="<?=$row->Photo?>">
+                    <img class="book-img-list" src="../upload/<?=$row->Photo?>" alt="<?=$row->Photo?>">
                 <?php endif;?></td>
                 <td><?php echo $row->Title ?></td>
                 <td><?php echo $row->Writer?></td>
                 <td><?php echo $row->Target?></td>
-                <td><?php echo $row->MDate?></td>
-                <td><?php echo $row->MTime?></td>
+                <td><?php echo $row->meetDate?></td>
+                <td><?php echo $row->days?></td>
+                <td><?php echo $row->startTime?> ~ <?php echo $row->endTime?></td>
                 <td><a href="./Read.php?idx=<?php echo $row->idx ?>"><i class="fa fa-arrow-right"></i></a></td>
             </tr>
             <?php

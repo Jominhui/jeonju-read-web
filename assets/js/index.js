@@ -34,6 +34,11 @@ $(() => {
 })
 
 const initEvent = () => {
+    // 읽기 전용
+    $(".readonly").on('keydown paste', function(e){
+        e.preventDefault();
+    });
+    
     $(document)
         .on('click','.btn-select', function(){
             let btnId = $(this).attr("id");
@@ -98,6 +103,33 @@ const initEvent = () => {
         .on('click', '#save_pdf', function () {
             save_pdf(this);
         })
+        // 예약 가능 목록
+        .on("click", '.select-date', function(e){
+            e.preventDefault();
+            let send_data = {};
+            send_data.mdate = $(this).attr("href");
+            send_data.action = "getmeets";
+    
+            $.post("../lib/action.php", send_data, function(result){
+                let res = $.parseJSON(result);
+                let table = "<table class='table'>";
+                table += "<tr><td>제목</td><td>작가</td><td>날짜</td><td>요일</td><td>시간</td><td>선택</td></tr>";
+                for(let i=0; i<res.length; i++) {
+                    table += tr = `
+                        <tr>
+                            <td>${res[i].Title}</td>
+                            <td>${res[i].Writer}</td>
+                            <td>${res[i].meetDate}</td>
+                            <td>${res[i].days}</td>
+                            <td>${res[i].startTime} ~ ${res[i].endTime}</td>
+                            <td><a href="#!" onclick="selectDate('${res[i].meetDate}', '${res[i].days}', '${res[i].Writer}','${res[i].startTime}', '${res[i].endTime}', '${res[i].Title}', '${res[i].Photo}')">선택</a></td>
+                        </tr>
+                    `;
+                }
+                table += "</table>";
+                $("#selectlist").html(table);
+            });
+        });
 }
 
 // 그림판
@@ -400,7 +432,7 @@ const checkCaptcha = () => {
 
 // 예약여부
 const changeReady = (idx, ready) => {
-    $.post("../lib/action.php", {idx:idx, ready:ready, action: "changereadystate"}, function(result){
+    $.post("../../lib/action.php", {idx:idx, ready:ready, action: "changereadystate"}, function(result){
         let res = $.parseJSON(result);
         if( res.success ) {
             $("#schFrm").submit();
@@ -416,50 +448,30 @@ const changeYmd = () => {
     let m=$("#month").val();
     location.href = "Reservate.php?year=" + y + "&month=" + m;
 }
-$(function(){
-    $(".select-date").on("click", function(e){
-        e.preventDefault();
-        let send_data = {};
-        send_data.mdate = $(this).attr("href");
-        send_data.action = "getmeets";
 
-        $.post("../lib/action.php", send_data, function(result){
-            let res = $.parseJSON(result);
-            let table = "<table class='table'>";
-            table += "<tr><td>제목</td><td>작가</td><td>날짜</td><td>시간</td><td>선택</td></tr>";
-            for(let i=0; i<res.length; i++) {
-                table += tr = `
-                    <tr>
-                        <td>${res[i].Title}</td>
-                        <td>${res[i].Writer}</td>
-                        <td>${res[i].MDate}</td>
-                        <td>${res[i].MTime}</td>
-                        <td><a href="#!" onclick="selectDate('${res[i].MDate}','${res[i].Writer}','${res[i].MTime}', '${res[i].Title}', '${res[i].Photo}')">선택</a></td>
-                    </tr>
-                `;
-            }
-            table += "</table>";
-            $("#selectlist").html(table);
-        });
-    });
-});
-
-const selectDate = (MDate, Writer, MTime, Title, Photo) => {
-    $("#date").val(MDate);
-    $("#time").val(MTime);
+const selectDate = (meetDate, days, Writer, startTime, endTime, Title, Photo) => {
+    $("#date").val(meetDate);
+    $("#days").val(days);
+    $("#startTime").val(startTime);
+    $("#endTime").val(endTime);
     $("#writer").val(Writer);
     $("#title").val(Title);
     $("#photo").val(Photo);
 }
 
-$(".readonly").on('keydown paste', function(e){
-    e.preventDefault();
-});
-
 // 예약 취소
 const delEvent = (idx) => {
     if( ! idx ) return;
     if( ! confirm("예약을 취소하시겠습니까?") ) return;
+    let frm = document.getElementById('delForm');
+    document.getElementById('idx').value= idx;
+    frm.submit();
+}
+
+//게시문 삭제
+const delread = (idx) => {
+    if( ! idx ) return;
+    if( ! confirm("게시글을 삭제하시겠습니까?") ) return;
     let frm = document.getElementById('delForm');
     document.getElementById('idx').value= idx;
     frm.submit();

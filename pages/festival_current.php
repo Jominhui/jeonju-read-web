@@ -17,7 +17,7 @@
     $json2 = json_encode($data2, JSON_UNESCAPED_UNICODE);
 ?>
     <div class="center">
-        <canvas id="canvas" width="500" height="500"></canvas>
+        <canvas id="canvas1" width="500" height="500"></canvas>
     </div>
     <div class="center">
         <canvas id="canvas3" width="500" height="500"></canvas>
@@ -35,16 +35,16 @@
     <div id="school" class="center"></div>
 
 <script>
-    let canvas = document.getElementById('canvas');
+    let canvas1 = document.getElementById('canvas1');
     let canvas2 = document.getElementById('canvas2');
     let canvas3 = document.getElementById('canvas3');
     let canvas4 = document.getElementById('canvas4');
-    let cw = canvas.width;
-    let ch = canvas.height;
+    let cw = canvas1.width;
+    let ch = canvas1.height;
     let cr = cw / 2;
     let cx = cw / 2;
     let cy = ch / 2;
-    let ctx = canvas.getContext('2d');
+    let ctx1 = canvas1.getContext('2d');
     let ctx2 = canvas2.getContext('2d');
     let ctx3 = canvas3.getContext('2d');
     let ctx4 = canvas4.getContext('2d');
@@ -66,10 +66,10 @@
 
     for(let i=0;i<json2.length;i++) total2 += parseInt(json2[i].CNT, 10);
 
-    ctx.beginPath();
-    ctx.arc(cw/2, ch/2, 200, 0, 2*Math.PI);
-    ctx.strokeStyle = "black";
-    ctx.stroke();
+    ctx1.beginPath();
+    ctx1.arc(cw/2, ch/2, 200, 0, 2*Math.PI);
+    ctx1.strokeStyle = "black";
+    ctx1.stroke();
 
     ctx2.beginPath();
     ctx2.arc(cw/2, ch/2, 200, 0, 2*Math.PI);
@@ -80,19 +80,19 @@
     for(let i=0;i<json.length;i++) {
         let rate = json[i].CNT / total;
         end = start + ( rate * (2 * Math.PI) );
-        ctx.beginPath();
-        ctx.moveTo(cw/2, ch/2);
-        ctx.arc(cw/2, ch/2, 200, start, end);
-        ctx.moveTo(cw/2, ch/2);
-        ctx.fillStyle = colors[i];
-        ctx.fill();
+        ctx1.beginPath();
+        ctx1.moveTo(cw/2, ch/2);
+        ctx1.arc(cw/2, ch/2, 200, start, end);
+        ctx1.moveTo(cw/2, ch/2);
+        ctx1.fillStyle = colors[i];
+        ctx1.fill();
 
         let pos = getarc(cx,cy,cr/1.7,start + 2*Math.PI*(rate/2));
-        ctx.fillStyle = 'black';
-        ctx.font = "15px Malgun Gothic";
-        ctx.textAlign = "center";
-        ctx.fillText(json[i].writer, pos[0], pos[1]);
-        ctx.fillText(json[i].CNT, pos[0], pos[1]+18);
+        ctx1.fillStyle = 'black';
+        ctx1.font = "15px Malgun Gothic";
+        ctx1.textAlign = "center";
+        ctx1.fillText(json[i].writer, pos[0], pos[1]);
+        ctx1.fillText(json[i].CNT, pos[0], pos[1]+18);
         start = end;
 
         let writer = `<span style='width:20px; height: 20px; display: inline-block; background-color: ${colors[i]}'></span>${json[i].writer} `;
