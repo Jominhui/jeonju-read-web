@@ -7,7 +7,7 @@ frontend : html, css, php, javascript
 backend : xampp, mysql
 
 # 기능 정리
- - 온라인 책 만들기 :
+ - 온라인 책 만들기 :   
      이미지를 올리고 꾸밀 수 있음
     
  - 행사 등록 :   
