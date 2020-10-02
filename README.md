@@ -3,8 +3,8 @@ JEONJU Read Festival Web
 National Skill Competition 2020
    
 # 사용 언어 및 서버
-frontend : html, css, php, javascript   
-backend : xampp, mysql
+frontend : Html, css, php, javascript   
+backend : Xampp, Mysql
 
 # 기능 정리
  - **온라인 책 만들기** :   
